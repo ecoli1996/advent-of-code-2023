@@ -36,8 +36,8 @@ for(int i=1; i < lines.Length; i++)
         var sourceNumber2 = sourceNumber + (range - 1);
         var mapping = new Mapping
         {
-            MaxSourceNumber = Math.Max(sourceNumber, sourceNumber2),
-            MinSourceNumber = Math.Min(sourceNumber, sourceNumber2),
+            MaxSourceNumber = sourceNumber,
+            MinSourceNumber = sourceNumber2,
             DifferenceToDestination = differenceFromSourceToDestination
         };
 
