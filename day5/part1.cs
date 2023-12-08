@@ -1,7 +1,7 @@
+using AdventOfCode;
+
 var lines = File.ReadAllLines("../../../input.txt");
-
 var seeds = lines[0].Split(' ').Skip(1).Select(ulong.Parse).ToList();
-
 var maps = new Dictionary<MappingType, List<Mapping>>();
 
 var getMappingType = false;
@@ -66,22 +66,3 @@ ulong GetDestinationNumber(MappingType mappingType, ulong sourceValue)
 }
 
 Console.WriteLine($"Lowest location value: {lowestLocationNumber}");
-
-enum MappingType
-{
-    None,
-    SeedToSoil,
-    SoilToFertilizer,
-    FertilizerToWater,
-    WaterToLight,
-    LightToTemperature,
-    TemperatureToHumidity,
-    HumidityToLocation
-}
-
-class Mapping
-{
-    public ulong MinSourceNumber { get; set; }
-    public ulong MaxSourceNumber { get; set; }
-    public ulong DifferenceToDestination { get; set; }
-}
